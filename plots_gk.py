@@ -8,6 +8,13 @@ Created on Wed Sep  6 15:18:39 2023
 from matplotlib import pyplot as plt
 import numpy as np
 import pandas as pd
+import scienceplots
+import sys
+sys.path.append(r"C:\Users\Gregor\Documents\GitHub\matplotlib_templates")
+plt.style.use(['science','vibrant', 'no-latex'])
+# plt.rcParams.update({"figure.dpi": 200})
+# plt.style.use("default")
+# plt.rc('axes', prop_cycle="high-vis.mplstyle")
 
 # colors = ["red", "green", "blue", "magenta", "black", "orange", "cyan"]
 colors = ['#377eb8', '#ff7f00', '#4daf4a',
@@ -77,7 +84,7 @@ def barchart_sens_analysis(x_labels, bar_values, bar_labels, x_ax_label="y", y_a
     ax.xaxis.set_tick_params(which='minor', bottom=False)
     for ind, (bar_label, bar_value) in enumerate(zip(bar_labels, bar_values)):
         offset = width * multiplier
-        rects = ax.bar(x + offset, bar_value, width, label=bar_label, color=colors[ind], edgecolor='black', hatch=hatch1[ind])
+        rects = ax.bar(x + offset, bar_value, width, label=bar_label, edgecolor='black', hatch=hatch1[ind])
         # ax.bar_label(rects, padding=3)
         multiplier += 1
 
