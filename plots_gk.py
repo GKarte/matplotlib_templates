@@ -17,9 +17,10 @@ plt.style.use(['science','vibrant', 'no-latex'])
 # plt.rc('axes', prop_cycle="high-vis.mplstyle")
 
 # colors = ["red", "green", "blue", "magenta", "black", "orange", "cyan"]
-colors = ['#377eb8', '#ff7f00', '#4daf4a',
-          '#f781bf', '#a65628', '#984ea3',
-          '#999999', '#e41a1c', '#dede00']
+colors = plt.rcParams['axes.prop_cycle'].by_key()['color']
+# colors = ['#377eb8', '#ff7f00', '#4daf4a',
+#           '#f781bf', '#a65628', '#984ea3',
+#           '#999999', '#e41a1c', '#dede00']
 colors2 = ["brown", "purple", "teal", "gray"]
 markers = ["x","+","o","*", "v", "^", "."]
 markers2 = ["1","2", "3"]
