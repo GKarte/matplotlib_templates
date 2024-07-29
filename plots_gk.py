@@ -11,10 +11,15 @@ import pandas as pd
 import scienceplots
 import sys
 sys.path.append(r"C:\Users\Gregor\Documents\GitHub\matplotlib_templates")
-plt.style.use(['science','vibrant', 'no-latex'])
+plt.style.use(['science','vibrant'])
 # plt.rcParams.update({"figure.dpi": 200})
 # plt.style.use("default")
 # plt.rc('axes', prop_cycle="high-vis.mplstyle")
+
+
+# import personal plotting lib
+# sys.path.append(r"C:\Users\Gregor\Documents\GitHub\matplotlib_templates")
+# import plots_gk as pgk
 
 # colors = ["red", "green", "blue", "magenta", "black", "orange", "cyan"]
 colors = plt.rcParams['axes.prop_cycle'].by_key()['color']
@@ -26,7 +31,7 @@ markers = ["x","+","o","*", "v", "^", "."]
 markers2 = ["1","2", "3"]
 hatch1 = ["//", "\\", "x", "o", ".", "*", "///", "xx", "oo", ".."]
 
-def create_plot(figsize=(6, 5), dpi=200, x_range=(0,1), y_range=(0,1), x_label="x", y_label="y", second_ax=False, y2_range=None, y2_label="y2", title=None):
+def create_plot(figsize=(6, 5), dpi=200, x_range=(0,1), y_range=(0,1), x_label="x", y_label="y", second_ax=False, y2_range=None, y2_label="y2", title=None, grid=True, grid_fine=True):
     fig, ax = plt.subplots(1, 1, figsize=figsize, dpi=dpi)
     fig.tight_layout()
     xmin, xmax = x_range
@@ -34,10 +39,13 @@ def create_plot(figsize=(6, 5), dpi=200, x_range=(0,1), y_range=(0,1), x_label="
     ax.set_xlim(xmin, xmax)
     ax.set_ylim(ymin, ymax)
     ax.set_xlabel(x_label)
-    ax.set_ylabel(y_label)    
-    ax.grid()
-    ax.grid(which='minor', color='lightgray', linestyle=':', linewidth=0.5)
-    ax.minorticks_on()
+    ax.set_ylabel(y_label)
+    if grid:
+        ax.grid()
+    if grid_fine:
+        # ax.grid(which='minor', color='lightgray', linestyle=':', linewidth=0.5)
+        ax.grid(which='minor', color='lightgray', linewidth=0.25)
+        ax.minorticks_on()
     if title:
         ax.set_title(title)
     if second_ax:
@@ -132,3 +140,4 @@ if __name__ == "__main__":
                 }
 
     _ = barchart_sens_analysis(y_labels, y_values, x_labels, y_ax_label="test", title=None)
+    
