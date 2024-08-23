@@ -44,7 +44,7 @@ def create_plot(figsize=(6, 5), dpi=200, x_range=(0,1), y_range=(0,1), x_label="
         ax.grid()
     if grid_fine:
         # ax.grid(which='minor', color='lightgray', linestyle=':', linewidth=0.5)
-        ax.grid(which='minor', color='lightgray', linewidth=0.25)
+        ax.grid(which='minor', color='lightgray', linewidth=0.1, alpha=0.8)
         ax.minorticks_on()
     if title:
         ax.set_title(title)
@@ -88,7 +88,7 @@ def barchart_sens_analysis(x_labels, bar_values, bar_labels, x_ax_label="y", y_a
     ax.set_ylabel(y_ax_label)
     ax.set_axisbelow(True)
     ax.grid(axis="y", linestyle="-")
-    ax.grid(which='minor', color='silver', linestyle=':', linewidth=0.5, axis="y")
+    ax.grid(which='minor', color='silver', linestyle=':', linewidth=0.1, alpha=0.8, axis="y")
     ax.minorticks_on()
     ax.xaxis.set_tick_params(which='minor', bottom=False)
     for ind, (bar_label, bar_value) in enumerate(zip(bar_labels, bar_values)):
