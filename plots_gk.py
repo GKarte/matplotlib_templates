@@ -10,12 +10,10 @@ import numpy as np
 import pandas as pd
 import scienceplots
 import sys
-sys.path.append(r"C:\Users\Gregor\Documents\GitHub\matplotlib_templates")
+# sys.path.append(r"C:\Users\Gregor\Documents\GitHub\matplotlib_templates")
 plt.style.use(['science','vibrant'])
 # plt.rcParams.update({"figure.dpi": 200})
 # plt.style.use("default")
-# plt.rc('axes', prop_cycle="high-vis.mplstyle")
-
 
 # import personal plotting lib
 # sys.path.append(r"C:\Users\Gregor\Documents\GitHub\matplotlib_templates")
@@ -27,9 +25,10 @@ colors = plt.rcParams['axes.prop_cycle'].by_key()['color']
 #           '#f781bf', '#a65628', '#984ea3',
 #           '#999999', '#e41a1c', '#dede00']
 colors2 = ["brown", "purple", "teal", "gray"]
-markers = ["x","+","o","*", "v", "^", "."]
+markers = ["x","o", "v", "^","*","+", "."]
 markers2 = ["1","2", "3"]
 hatch1 = ["//", "\\", "x", "o", ".", "*", "///", "xx", "oo", ".."]
+linestyles = ["-", "--", "-.", ":"]
 
 def create_plot(figsize=(6, 5), dpi=200, x_range=(0,1), y_range=(0,1), x_label="x", y_label="y", second_ax=False, y2_range=None, y2_label="y2", title=None, grid=True, grid_fine=True):
     fig, ax = plt.subplots(1, 1, figsize=figsize, dpi=dpi)
