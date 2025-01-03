@@ -43,7 +43,7 @@ def create_plot(figsize=(6, 5), dpi=200, x_range=(0,1), y_range=(0,1), x_label="
         ax.grid()
     if grid_fine:
         # ax.grid(which='minor', color='lightgray', linestyle=':', linewidth=0.5)
-        ax.grid(which='minor', color='lightgray', linewidth=0.1, alpha=0.8)
+        ax.grid(which='minor', color='lightgray', linewidth=0.3, alpha=0.8)
         ax.minorticks_on()
     if title:
         ax.set_title(title)
