@@ -37,8 +37,9 @@ def create_plot(figsize=(6, 5), dpi=200, x_range=(0,1), y_range=(0,1), x_label="
     ymin, ymax = y_range
     ax.set_xlim(xmin, xmax)
     ax.set_ylim(ymin, ymax)
-    ax.set_xlabel(x_label)
-    ax.set_ylabel(y_label)
+    ax.tick_params(labelsize=14)
+    ax.set_xlabel(x_label, fontsize=16)
+    ax.set_ylabel(y_label, fontsize=16)
     if grid:
         ax.grid()
     if grid_fine:
@@ -83,8 +84,9 @@ def barchart_sens_analysis(x_labels, bar_values, bar_labels, x_ax_label="y", y_a
     multiplier = 0
     
     fig, ax = plt.subplots(dpi=300, figsize=figsize)
-    ax.set_xlabel(x_ax_label)
-    ax.set_ylabel(y_ax_label)
+    ax.tick_params(labelsize=14)
+    ax.set_xlabel(x_ax_label, fontsize=16)
+    ax.set_ylabel(y_ax_label, fontsize=16)
     ax.set_axisbelow(True)
     ax.grid(axis="y", linestyle="-")
     ax.grid(which='minor', color='silver', linestyle=':', linewidth=0.1, alpha=0.8, axis="y")
@@ -101,7 +103,7 @@ def barchart_sens_analysis(x_labels, bar_values, bar_labels, x_ax_label="y", y_a
     ax.set_xticks(x + width/2*(len(x_labels)-1), x_labels)
     y_max = max(abs(bar_values.flatten()))
     ax.set_ylim(-y_max*1.15, y_max*1.15)
-    ax.legend(ncol=legend_col)
+    ax.legend(ncol=legend_col, fontsize=14)
     return fig, ax
 
 
